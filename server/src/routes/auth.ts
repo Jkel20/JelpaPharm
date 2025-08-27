@@ -3,7 +3,7 @@ import { body, validationResult } from 'express-validator';
 import rateLimit from 'express-rate-limit';
 import { User } from '../models/User';
 import { protect } from '../middleware/auth';
-import asyncHandler from 'express-async-handler';
+import { asyncHandler } from '../middleware/errorHandler';
 import { sendEmail } from '../utils/email';
 import { logger } from '../utils/logger';
 import crypto from 'crypto';

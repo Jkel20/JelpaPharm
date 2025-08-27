@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import asyncHandler from 'express-async-handler';
+import { asyncHandler } from '../middleware/errorHandler';
 import { Warehouse } from '../models/Warehouse';
 import { Zone } from '../models/Zone';
 import { Rack } from '../models/Rack';

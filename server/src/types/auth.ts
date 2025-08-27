@@ -4,9 +4,6 @@ import { IUser } from '../models/User';
 export interface AuthRequest extends Request {
   user?: IUser;
   token?: string;
-  query: any;
-  params: any;
-  body: any;
 }
 
 export interface TokenPayload {
