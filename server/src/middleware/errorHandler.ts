@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { logger } from '../utils/logger';
+import { AuthRequest } from '../types/auth';
 
 export interface CustomError extends Error {
   statusCode?: number;
@@ -13,6 +14,8 @@ export const asyncHandler = <T extends Request = Request>(
 ) => (req: T, res: Response, next: NextFunction): void => {
   Promise.resolve(fn(req, res, next)).catch(next);
 };
+
+
 
 export const errorHandler = (
   err: CustomError,
