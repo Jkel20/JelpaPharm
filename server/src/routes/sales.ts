@@ -2,9 +2,10 @@ import express, { Response } from 'express';
 import { body, validationResult, query } from 'express-validator';
 import { Sales } from '../models/Sales';
 import { Inventory } from '../models/Inventory';
-import { protect, requireCashier, AuthRequest } from '../middleware/auth';
+import { protect, requireCashier } from '../middleware/auth';
 import { asyncHandler } from '../middleware/errorHandler';
 import { logger } from '../utils/logger';
+import { AuthRequest } from '../types/auth';
 
 const router = express.Router();
 

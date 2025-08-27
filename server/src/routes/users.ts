@@ -1,9 +1,10 @@
 import express, { Response } from 'express';
 import { body, validationResult, query } from 'express-validator';
 import { User } from '../models/User';
-import { protect, requireAdmin, AuthRequest } from '../middleware/auth';
+import { protect, requireAdmin } from '../middleware/auth';
 import { asyncHandler } from '../middleware/errorHandler';
 import { logger } from '../utils/logger';
+import { AuthRequest } from '../types/auth';
 
 const router = express.Router();
 

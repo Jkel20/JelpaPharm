@@ -2,12 +2,13 @@ import express, { Response } from 'express';
 import { query, validationResult } from 'express-validator';
 import { Inventory } from '../models/Inventory';
 import { User } from '../models/User';
-import { protect, requirePharmacist, AuthRequest } from '../middleware/auth';
+import { protect, requirePharmacist } from '../middleware/auth';
 import { asyncHandler } from '../middleware/errorHandler';
 import { logger } from '../utils/logger';
 import { sendLowStockAlert, sendExpiryAlert } from '../utils/email';
 import { NotificationService } from '../services/NotificationService';
 import moment from 'moment';
+import { AuthRequest } from '../types/auth';
 
 const router = express.Router();
 

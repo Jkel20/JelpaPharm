@@ -2,10 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { User, IUser } from '../models/User';
 import { asyncHandler } from './errorHandler';
-
-export interface AuthRequest extends Request {
-  user?: IUser;
-}
+import { AuthRequest } from '../types/auth';
 
 // Type guard to ensure user exists
 export const ensureUser = (req: AuthRequest): req is AuthRequest & { user: IUser } => {

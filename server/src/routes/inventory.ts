@@ -1,7 +1,8 @@
 import express, { Response } from 'express';
 import { body, validationResult, query } from 'express-validator';
 import { Inventory } from '../models/Inventory';
-import { protect, requirePharmacist, requireCashier, AuthRequest } from '../middleware/auth';
+import { protect, requirePharmacist, requireCashier } from '../middleware/auth';
+import { AuthRequest } from '../types/auth';
 import { asyncHandler } from '../middleware/errorHandler';
 import { logger } from '../utils/logger';
 

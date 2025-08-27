@@ -1,9 +1,10 @@
 import express, { Response } from 'express';
 import { body, query, validationResult } from 'express-validator';
 import { NotificationService } from '../services/NotificationService';
-import { protect, requireAdmin, AuthRequest, ensureUser } from '../middleware/auth';
+import { protect, requireAdmin, ensureUser } from '../middleware/auth';
 import { asyncHandler } from '../middleware/errorHandler';
 import { logger } from '../utils/logger';
+import { AuthRequest } from '../types/auth';
 
 const router = express.Router();
 

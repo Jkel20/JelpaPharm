@@ -2,8 +2,11 @@ import { Request } from 'express';
 import { IUser } from '../models/User';
 
 export interface AuthRequest extends Request {
-  user?: IUser; // Make user optional to match Express's type expectations
+  user?: IUser;
   token?: string;
+  query: any;
+  params: any;
+  body: any;
 }
 
 export interface TokenPayload {
